@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaArrowLeft, FaTrash, FaEdit, FaPlus } from 'react-icons/fa';
+import { FaArrowLeft, FaTrash, FaEdit, FaPlus, FaPlay } from 'react-icons/fa';
 
 export default function SetDetail() {
     const { setId } = useParams();
@@ -188,6 +188,13 @@ export default function SetDetail() {
                         <div className="d-flex justify-content-end mt-4">
                             <button className="btn btn-success" onClick={() => setShowModal(true)}>
                                 <FaPlus /> 단어 추가
+                            </button>
+                        </div>
+
+                        {/* 문제풀기 버튼 추가*/}
+                        <div className="d-flex justify-content-end mt-4">
+                            <button className="btn btn-primary" onClick={() => navigate(`/quiz/${setId}`)}>
+                                <FaPlay /> 문제풀기
                             </button>
                         </div>
 
