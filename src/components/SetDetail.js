@@ -165,18 +165,25 @@ export default function SetDetail() {
                             {words.length > 0 ? (
                                 words.map((word) => (
                                     <div key={word.voca_id} className="list-group-item d-flex justify-content-between">
-                                        <span className="fw-bold">{word.word}</span>
-                                        <span className="text-muted">{word.meaning}</span>
-                                        <button
-                                            className="btn btn-danger btn-sm"
-                                            onClick={() => deleteWord(word.voca_id)}
-                                        >
-                                            <FaTrash />
-                                        </button>
-                                        |
-                                        <button className="btn btn-warning me-2" onClick={() => handleEditClick(word)}>
-                                            <FaEdit /> 수정
-                                        </button>
+                                        <div className="d-flex">
+                                            <span className="fw-bolder">{word.word}</span>
+                                            <span className="text-muted ms-3">{word.meaning}</span>
+                                        </div>
+                                        <div className="d-flex gap-2">
+                                            <button
+                                                className="btn btn-danger btn-sm"
+                                                onClick={() => deleteWord(word.voca_id)}
+                                            >
+                                                <FaTrash />
+                                            </button>
+                                            |
+                                            <button
+                                                className="btn btn-warning btn-sm"
+                                                onClick={() => handleEditClick(word)}
+                                            >
+                                                <FaEdit /> 수정
+                                            </button>
+                                        </div>
                                     </div>
                                 ))
                             ) : (

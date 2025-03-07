@@ -81,7 +81,8 @@ export default function Main() {
                                 <div className="border rounded p-3 shadow-sm position-relative">
                                     {/* 삭제 버튼 (선택 사항) */}
                                     <FaTrash
-                                        className="position-absolute top-0 start-0 mt-2 ms-2 text-danger"
+                                        className="position-absolute top-0 end-0 mt-2 me-3 text-danger"
+                                        size={20}
                                         role="button"
                                         onClick={(e) => {
                                             e.stopPropagation(); // ✅ 부모 onClick 방지
