@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaTrash, FaPlus, FaSearch, FaUserCircle } from 'react-icons/fa';
+import Logout from './Logout';
 
 export default function Main() {
     const navigate = useNavigate();
@@ -55,18 +56,30 @@ export default function Main() {
     return (
         <div className="container-fluid bg-light min-vh-100">
             {/* 네비게이션 바 */}
-            <nav className="navbar navbar-light bg-white px-5 shadow-sm">
-                <span className="navbar-brand h1 fw-bold">WEB-KIT</span>
-                <div className="d-flex align-items-center">
-                    <input type="text" className="form-control me-2" placeholder="단어 세트 검색" />
-                    <button className="btn btn-danger me-3">
-                        <FaSearch /> 검색
+            <nav className="navbar navbar-light bg-white px-5 py-2 shadow-sm d-flex justify-content-between align-items-center">
+                <span className="navbar-brand h1 fw-bold m-0">WEB-KIT</span>
+
+                {/*검색창 */}
+                <div className="d-flex align-items-center flex-grow-1 mx-4">
+                    <input
+                        type="text"
+                        className="form-control me-2"
+                        placeholder="단어 세트 검색"
+                        style={{ maxWidth: '250px' }}
+                    />
+                    <button className="btn btn-danger d-flex align-items-center">
+                        <FaSearch className="me-1" /> 검색
                     </button>
-                    <FaUserCircle size={30} className="me-2" />
-                    <span className="fw-bold">user 님</span>
+                </div>
+
+                {/* 오른쪽 유저 정보 및 로그아웃 */}
+                <div className="d-flex align-items-center">
+                    <FaUserCircle size={30} className="me-2 text-secondary" />
+                    <span className="fw-bold me-3">user 님</span>
+                    <Logout />
                 </div>
             </nav>
-
+            
             {/* 단어 세트 목록 */}
             <div className="container mt-4">
                 <div className="row">
